@@ -62,6 +62,17 @@
 							<goal>build</goal>
 						</goals>
 					</execution>
+					<execution>
+						<id>push-image</id>
+						<!-- changed from deploy -->
+						<phase>install</phase>
+						<goals>
+							<goal>push</goal>
+						</goals>
+						<configuration>
+							<imageName>sjostric/calc-api:${project.version}</imageName>
+						</configuration>
+					</execution>
 				</executions>
 				<configuration>
 					<imageName>sjostric/calc-api</imageName>
@@ -71,9 +82,14 @@
 						<resource>
 							<targetPath>/</targetPath>
 							<directory>${project.build.directory}/dependency</directory>
-							<include>calc-app-${project.version}.jar</include>
+							<include>calc-app-api-${project.version}.jar</include>
 						</resource>
 					</resources>
+					<forceTags>true</forceTags>
+					<imageTags>
+						<imageTag>${project.version}</imageTag>
+						<imageTag>latest</imageTag>
+					</imageTags>
 				</configuration>
 			</plugin>
 
