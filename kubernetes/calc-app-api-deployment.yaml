@@ -1,0 +1,16 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: calc-api
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: calc-api
+    spec:
+      containers:
+      - name: calc-api
+        image: docker.io/sjostric/calc-api:1.0.0-SNAPSHOT
+        ports:
+        - containerPort: 8081 

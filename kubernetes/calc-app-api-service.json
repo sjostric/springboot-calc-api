@@ -1,0 +1,20 @@
+{
+    "kind": "Service",
+    "apiVersion": "v1",
+    "metadata": {
+        "name": "calc-api"
+    },
+    "spec": {
+        "selector": {
+            "app": "calc-api"
+        },
+        "ports": [
+            {
+                "protocol": "TCP",
+                "port": 80,
+                "targetPort": 8081 
+            }
+        ],
+        "type": "LoadBalancer"
+    }
+}
