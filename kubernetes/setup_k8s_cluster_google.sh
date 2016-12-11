@@ -14,9 +14,12 @@
 #login
 #gcloud auth application-default login
 
-# pre and create cluster
+# prepare and create cluster
 gcloud config set compute/zone europe-west1-b
 gcloud container clusters create cluster-test
+
+# delete cluster
+#gcloud container clusters delete cluster-test
 
 # connect to cluster
 gcloud container clusters get-credentials cluster-test --zone europe-west1-b --project burnished-fold-149817
