@@ -6,4 +6,5 @@ bin
 .mvn
 .springBeans
 db
+jmeter.log
 
